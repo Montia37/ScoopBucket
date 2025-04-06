@@ -4,6 +4,7 @@
     "homepage": "https://pixpinapp.com/",
     "license": "Freeware",
     "url": "https://download.pixpin.cn/PixPin_1.9.11.8.zip",
+    "extract_dir": "PixPin",
     "hash": "5C7EB2F080DC0974ABE0E56211EC63CAE81EF0A0042C37A2F375DA57AE7BDEA7",
     "persist": [
         "Data",
