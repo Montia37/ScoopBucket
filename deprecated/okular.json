@@ -1,0 +1,14 @@
+{
+    "version": "23.08.1",
+    "description": "阅读 PDF 文档、漫画电子书、Epub 电子书，浏览图像，显示标记语言文档等，功能丰富、轻巧快速的跨平台文档阅读器（无自动更新）",
+    "homepage": "https://okular.kde.org/zh-cn/",
+    "license": "GPL-2.0-or-later",
+    "url": "https://alist.mtian.top/d/ilanzou/okular_23.08.1.7z?sign=fLMoy5QAitomhr9d1jjnKzayU90GAPROxl4rFfZQIz4=:0",
+    "hash": "20E8BA6C8AE81E98CFAA8D1E67499D6208781990560179B4E4B75C8CD6E22D8B",
+    "shortcuts": [
+        [
+            "okular.exe",
+            "okular"
+        ]
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "version": "1.37.1",
+    "description": "Node 版本管理器（默认安装 v20 版本和 yarn 并更换镜像）",
+    "homepage": "https://github.com/Schniz/fnm",
+    "license": "GPL-3.0-only",
+    "url": "https://github.com/Schniz/fnm/releases/download/v1.37.1/fnm-windows.zip",
+    "hash": "44e964b4b408836cd24675ff85ce410d37d61a6a5df61e9c661bfd911670704f",
+    "bin": "fnm.exe",
+    "env_set": {
+        "FNM_NODE_DIST_MIRROR": "https://mirrors.aliyun.com/nodejs-release"
+    },
+    "post_install": [
+        "if (!(Test-Path $PROFILE)) {",
+        "    New-Item $PROFILE -ItemType File -Force",
+        "}",
+        "Add-Content -Path $PROFILE -Value 'fnm env --use-on-cd | Out-String | Invoke-Expression'",
+        ". $PROFILE",
+        "fnm install 20",
+        "npm config set registry https://registry.npmmirror.com",
+        "npm install -g yarn",
+        "yarn config set registry https://registry.npm.taobao.org/"
+    ],
+    "uninstaller": {
+        "script": [
+            "(Get-Content $PROFILE | Where-Object {$_ -notmatch 'fnm env --use-on-cd | Out-String | Invoke-Expression'}) | Out-File $PROFILE",
+            "[Environment]::SetEnvironmentVariable('FNM_NODE_DIST_MIRROR', '', 'User')",
+            "fnm uninstall 20"
+        ]
+    },
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/Schniz/fnm/releases/download/v$version/fnm-windows.zip"
+    }
+}

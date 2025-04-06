@@ -1,0 +1,28 @@
+{
+    "version": "6.38.25",
+    "description": "Internet Download Manager(IDM) 是一个用于Windows系统的下载管理器（自存，随时可能失效）",
+    "homepage": "https://www.423down.com/575.html",
+    "license": "Trailware",
+    "depends": "sudo",
+    "extract_dir": "IDM",
+    "url": "https://alist.mtian.net/d/Shares/Inet.Download.Manager.v6.38.25.exe#/dl.7z",
+    "hash": "a576324530c044de9d25587189e2b8370ffb9de616f36669776b4883d24a4651",
+    "installer": {
+        "script": "sudo cmd /c \"$dir\\!)绿化.bat\""
+    },
+    "uninstaller": {
+        "script": "sudo cmd /c \"$dir\\!)卸载.bat\""
+    },
+    "shortcuts": [
+        [
+            "IDMan.exe",
+            "IDMan"
+        ]
+    ],
+    "bin": [
+        [
+            "IDMan.exe",
+            "IDMan"
+        ]
+    ]
+}

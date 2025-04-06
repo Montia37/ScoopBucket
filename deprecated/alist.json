@@ -1,0 +1,61 @@
+{
+    "version": "3.33.0",
+    "description": "A file list program that supports multiple storage, powered by Gin and Solidjs.",
+    "homepage": "https://alist.nn.ci",
+    "license": "AGPL-3.0-or-later",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/alist-org/alist/releases/download/v3.33.0/alist-windows-amd64.zip",
+            "hash": "md5:5e7356c1ed32ce5799429900de390a04"
+        },
+        "32bit": {
+            "url": "https://github.com/alist-org/alist/releases/download/v3.33.0/alist-windows-386.zip",
+            "hash": "md5:fc8b7a1652dca8f5955c268dfd0657c7"
+        },
+        "arm64": {
+            "url": "https://github.com/alist-org/alist/releases/download/v3.33.0/alist-windows-arm64.zip",
+            "hash": "md5:f10e7907adbd2da5c4f37bf222bde118"
+        }
+    },
+    "bin": [
+        [
+            "alist.exe",
+            "alist",
+            "--force-bin-dir"
+        ]
+    ],
+    "post_install": [
+        "$scriptdir = \"$bucketsdir\\$bucket\\scripts\\alist\"",
+        "Copy-Item -Path \"$scriptdir\\alist_start.vbs\" -Destination \"$dir\\alist_start.vbs\"",
+        "Copy-Item -Path \"$scriptdir\\alist_stop.vbs\" -Destination \"$dir\\alist_stop.vbs\"",
+        "Copy-Item -Path \"$dir\\alist_start.vbs\" -Destination \"$env:USERPROFILE\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\" -Force",
+        "alist start"
+    ],
+    "persist": [
+        "data",
+        "log"
+    ],
+    "pre_uninstall": [
+        "alist stop",
+        "Remove-Item \"$env:USERPROFILE\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\alist_start.vbs\" -Force"
+    ],
+    "checkver": {
+        "github": "https://github.com/alist-org/alist"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/alist-org/alist/releases/download/v$version/alist-windows-amd64.zip"
+            },
+            "32bit": {
+                "url": "https://github.com/alist-org/alist/releases/download/v$version/alist-windows-386.zip"
+            },
+            "arm64": {
+                "url": "https://github.com/alist-org/alist/releases/download/v$version/alist-windows-arm64.zip"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/md5.txt"
+        }
+    }
+}

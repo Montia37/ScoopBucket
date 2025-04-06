@@ -1,0 +1,35 @@
+{
+    "version": "2.6.7",
+    "description": "OCS 浏览器自动化神器，一键浏览器多开，用户脚本环境一键配置。",
+    "homepage": "https://docs.ocsjs.com/docs/app",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://cdn.ocsjs.com/app/download/ocs-2.6.7-setup-win-x64.exe#/dl.7z",
+            "hash": "12190e49d4a2503db3b19603e5f8b5c91401219dccff674885205496f45bd614",
+            "pre_install": [
+                "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
+                "Remove-Item \"$dir\\`$R0\", \"$dir\\`$PLUGINSDIR\" -Force -Recurse"
+            ]
+        }
+    },
+    "shortcuts": [
+        [
+            "OCS Desktop.exe",
+            "OCS Desktop",
+            "--user-data-dir=\"$dir\\User Data\""
+        ]
+    ],
+    "persist": "User Data",
+    "checkver": {
+        "url": "https://github.com/ocsjs/ocs-desktop/tags",
+        "regex": "/releases/tag/(?:v|V)?([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://cdn.ocsjs.com/app/download/ocs-$version-setup-win-x64.exe#/dl.7z"
+            }
+        }
+    }
+}

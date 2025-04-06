@@ -1,0 +1,55 @@
+{
+    "version": "7.32",
+    "description": "免费解压缩软件，号称速度最快的压缩和解压缩文件管理器。",
+    "homepage": "http://www.bandisoft.com/bandizip/",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://en.bandisoft.com/bandizip/eula/"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://dl.bandisoft.com/bandizip.std/BANDIZIP-SETUP-STD-X64.EXE#/dl.7z",
+            "hash": "dcc3293abab4f81ad6b3a3a26c53dcbd153c46809f9aaebe57430f2f1df7b980",
+            "pre_install": "Rename-Item \"$dir\\Bandizip.x64.exe\" 'Bandizip.exe'"
+        },
+        "32bit": {
+            "url": "https://dl.bandisoft.com/bandizip.std/BANDIZIP-SETUP-STD-ALL.EXE#dl.7z",
+            "hash": "bdc291a02f43f7d402adfb0bb81a5826ded47e24e310a6e7ab8def3573273de1",
+            "pre_install": "Rename-Item \"$dir\\Bandizip.x86.exe\" 'Bandizip.exe'"
+        }
+    },
+    "installer": {
+        "script": [
+            "Get-ChildItem \"$dir\\Bandizip.x*.exe\" | Remove-Item",
+            "if (!(Test-Path \"$persist_dir\\Bandizip.ini\")) { New-Item \"$dir\\Bandizip.ini\" | Out-Null }"
+        ]
+    },
+    "post_install": [
+        "regsvr32 /s \"$dir\\bdzshl.x64.dll\""
+    ],
+    "bin": "Bandizip.exe",
+    "shortcuts": [
+        [
+            "Bandizip.exe",
+            "Bandizip"
+        ]
+    ],
+    "persist": "Bandizip.ini",
+    "checkver": {
+        "url": "https://en.bandisoft.com/bandizip/history/",
+        "regex": "v([\\d.]+)</font"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://dl.bandisoft.com/bandizip.std/BANDIZIP-SETUP-STD-X64.EXE"
+            },
+            "32bit": {
+                "url": "https://dl.bandisoft.com/bandizip.std/BANDIZIP-SETUP-STD-ALL.EXE"
+            }
+        },
+        "hash": {
+            "mode": "download"
+        }
+    }
+}

@@ -1,0 +1,61 @@
+{
+    "version": "1.7.22076",
+    "description": "高度可定制的媒体播放器（自存，随时可能失效）",
+    "homepage": "https://potplayer.daum.net",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://potplayer.daum.net/publicRelation"
+    },
+    "extract_dir": [
+        "PotPlayer_1.7.22076_64bit_Green"
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://alist.mtian.top/d/lanzou/PotPlayer_1.7.22076_64bit_Green.7z?sign=vujPWz4g9FxUqPzgrD-wx_mxzNVfVq5g_NwHo1C_SIw=:0",
+            "hash": "20ED8B83099FFB5C93A787C80935E5350681C072C41BB22C4B1BBD6C196E7F25",
+            "shortcuts": [
+                [
+                    "PotPlayerMini64.exe",
+                    "PotPlayer Mini"
+                ]
+            ]
+        }
+    },
+    "pre_install": [
+        "Remove-Item \"$dir\\`$*\" -Force -Recurse",
+        "$CONT = @(",
+        "    '[Settings]'",
+        "    'AutoUpdateStart=0'",
+        "    'CheckAutoUpdate=0'",
+        "    'FastAutoUpdate=0'",
+        ")",
+        "    # Set Configs for all executables",
+        "foreach ($f in @('PotPlayerMini64.ini', 'PotPlayerMini.ini', 'PotPlayer64.ini', 'PotPlayer.ini')) {",
+        "    if (-not (Test-Path \"$persist_dir\\$f\")) {",
+        "        Write-Host 'File' $f 'does not exists. Creating' -f Yellow",
+        "        Set-Content \"$dir\\$f\" $CONT -Encoding Ascii",
+        "    }",
+        "}"
+    ],
+    "post_install": [
+        "cmd /c \"$dir\\!)设置优化.bat\""
+    ],
+    "pre_uninstall": [
+            "cmd /c \"$dir\\!)卸载清除.bat\""
+    ],
+    "persist": [
+        "Capture",
+        "Extension",
+        "IconPack",
+        "Logos",
+        "Module",
+        "Playlist",
+        "PxShader",
+        "Skins",
+        "UrlList",
+        "PotPlayer.ini",
+        "PotPlayer64.ini",
+        "PotPlayerMini.ini",
+        "PotPlayerMini64.ini"
+    ]
+}

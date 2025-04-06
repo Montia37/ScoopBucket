@@ -1,0 +1,21 @@
+{
+    "homepage": "https://github.com/AiKirito/Clash_For_Windows_Ultra",
+    "description": "A Windows GUI based on Clash 去广告汉化版（无自动更新）",
+    "version": "0.20.39",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://alist.mtian.top/d/lanzou/Clash.For.Windows.v3.2.Ultra.x86_64.7z?sign=Kw6iNipVkFraHGiRTEwo1mL5Acbgc6925yZD6WFzbeQ=:0",
+            "hash": "85A561C0E0269003B5499D016ABA0AE402A9F79D88A66E23B6B9E71FFDB27C84"
+        }
+    },
+    "persist": [
+        "data"
+    ],
+    "shortcuts": [
+        [
+            "Clash for Windows.exe",
+            "Clash for Windows"
+        ]
+    ]
+}

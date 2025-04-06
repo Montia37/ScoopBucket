@@ -1,0 +1,20 @@
+{
+    "version": "5.5.0.1488",
+    "description": "用于数据恢复、磁盘分区管理、备份和恢复的实用程序（自存，随时可能失效）",
+    "homepage": "https://www.diskgenius.cn/",
+    "license": "Freeware",
+    "architecture": {
+        "64bit": {
+            "url": "https://alist.mtian.net/d/Shares/Diskgenius_Pro_x64_5.5.0.1488_cn.exe#/dl.7z",
+            "hash": "0E8E6CCAC4BDC7D3335E7E0F9D98E984ACDAA089B69538863E7F8D4AB795D887"
+        }
+    },
+    "bin": "DiskGenius.exe",
+    "shortcuts": [
+        [
+            "DiskGenius.exe",
+            "DiskGenius"
+        ]
+    ],
+    "persist": "Options.ini"
+}
