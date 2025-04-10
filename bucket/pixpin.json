@@ -19,7 +19,7 @@
     ],
     "checkver": {
         "url": "https://api.viewdepth.cn/app_info?app_id=pixpin&update_type=1&grayscale_value=1&sys=win&ver=1&ts=1",
-        "regex": "PixPin_([\\d.]+).zip"
+        "regex": "\"version\":\"([\\d.]+)\""
     },
     "autoupdate": {
         "url": "https://download.pixpin.cn/PixPin_$version.zip"
