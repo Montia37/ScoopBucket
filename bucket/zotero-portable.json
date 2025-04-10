@@ -1,10 +1,10 @@
 {
-    "version": "7.0.12",
+    "version": "7.0.15",
     "description": "Zotero portableapps 便携版。开源参考文献管理软件，用于管理书目数据和相关研究资料。",
     "homepage": "https://www.zotero.org/",
     "license": "AGPL-3.0-only",
-    "url": "https://download2.portableapps.com/portableapps/ZoteroPortable/ZoteroPortable_7.0.12.paf.exe#/dl.7z",
-    "hash": "4b8caa8fb56bb324ed79dacf250d9ddfed41955e0137761614cfc72faa7ad35a",
+    "url": "https://download2.portableapps.com/portableapps/ZoteroPortable/ZoteroPortable_7.0.15.paf.exe#/dl.7z",
+    "hash": "3d7ca5ce654d93836f7fae4230ff4b38191f35fb4ea898f068fc2b574f1b5d1f",
     "bin": "ZoteroPortable.exe",
     "shortcuts": [
         [
