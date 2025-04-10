@@ -16,7 +16,7 @@
         ]
     ],
     "checkver": {
-        "url": "https://github.com/Hex-Dragon/PCL2"
+        "github": "https://github.com/Hex-Dragon/PCL2"
     },
     "autoupdate": {
         "url": "https://cdn.bbsmc.net/bbsmc/data/YJBkhCZM/versions/JIyvBEgV/PCL%20%E6%AD%A3%E5%BC%8F%E7%89%88%20$version.zip"
