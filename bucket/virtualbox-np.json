@@ -1,12 +1,12 @@
 {
-    "version": "7.0.14",
-    "description": "强大的 x86 和 AMD64/Intel64 虚拟化产品，适合企业和家庭使用（无自动更新）",
+    "version": "7.0.26",
+    "description": "强大的 x86 和 AMD64/Intel64 虚拟化产品，适合企业和家庭使用[无自动更新]",
     "homepage": "https://www.virtualbox.org/",
     "license": "GPL-2.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://download.virtualbox.org/virtualbox/7.0.14/VirtualBox-7.0.14-161095-Win.exe#/setup.exe",
-            "hash": "4719b38e7a276b43099ce4d6349e6bfc80edf644ee59d9dafd264bc7ed7691f4"
+            "url": "https://download.virtualbox.org/virtualbox/7.0.26/VirtualBox-7.0.26-168464-Win.exe#/setup.exe",
+            "hash": "d6d4eb902221de51c9cff4ba5d41dcbc35cc1020b27e980ca8d4d80b5930e5d9"
         }
     },
     "installer": {
