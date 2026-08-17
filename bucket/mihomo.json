@@ -1,12 +1,12 @@
 {
-    "version": "1.19.29",
+    "version": "1.19.30",
     "description": "A simple Python Pydantic model for Honkai: Star Rail parsed data from the Mihomo API.",
     "homepage": "https://github.com/MetaCubeX/mihomo",
     "license": "GPL-3.0-or-later",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/MetaCubeX/mihomo/releases/download/v1.19.29/mihomo-windows-amd64-v1.19.29.zip",
-            "hash": "1a8520cfe425441eba3eba8623b27b985020031243fe1ecaa1af2b92358a03f9"
+            "url": "https://github.com/MetaCubeX/mihomo/releases/download/v1.19.30/mihomo-windows-amd64-v1.19.30.zip",
+            "hash": "22c09fd67673895ef7cd6b1820563918275c3d316f2462b306208675118db3c0"
         }
     },
     "pre_install": "Get-ChildItem \"$dir\\mihomo*.exe\" | Rename-Item -NewName 'mihomo.exe'",
